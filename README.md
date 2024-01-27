@@ -60,5 +60,5 @@ python app.py
 
 ## Autor
 
-[Giorgi Iluridze]
+Giorgi Iluridze
 
