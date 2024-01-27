@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Rejestracja</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-warning">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('signup') }}" method="post">
+
+            <input type="text" class="input" id="first_name" name="first_name" placeholder="Imie" required>
+
+
+            <input type="text" class="input" id="last_name" name="last_name" placeholder="Nazwiśko" required>
+
+
+            <input type="email" class="input" id="email" name="email" placeholder="Email" required>
+
+
+            <input type="password" class="input" id="password" name="password" placeholder="Hasło" required>
+
+            <button type="submit" class="button" >Rejestracja</button>
+        <p>Nie chcesz kontynuować ? <a href="{{ url_for('index') }}">Wroć na stornę Glowną</a></p>
+
+    </form>
+</div>
+</body>
+</html>
